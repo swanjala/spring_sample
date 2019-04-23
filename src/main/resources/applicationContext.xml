@@ -6,5 +6,11 @@
    <bean name="customerRepository"
          class="com.sample.repository.HibernateCustomerRepository"/>
 
+    <bean name="customerService"
+          class="com.service.CustomerService">
+
+        <property name="customerRepository" ref="customerRepository"/>
+    </bean>
+
 
 </beans>
