@@ -8,9 +8,16 @@
 
     <bean name="customerService"
           class="com.service.CustomerService">
-
-        <constructor-arg index="0" ref="customerRepository"/>
+    <constructor-arg index="0" ref="customerRepository"/>
     </bean>
+
+<!--    <bean name="customerService"-->
+<!--          class="com.service.CustomerService" autowire="constructor"/> -->
+
+<!--    <bean name="customerService"-->
+    <!--          class="com.service.CustomerService" autowire="byType"/> arguments in the setter-->
+    <!--    <bean name="customerService"-->
+    <!--          class="com.service.CustomerService" autowire="byName"/> arguments in the setter-->
 
 
 </beans>
