@@ -1,15 +1,15 @@
 package com.service;
 
-import com.sample.repository.HibernateCustomerRepositoryImpl;
+import com.sample.repository.HibernateCustomerRepository;
 import com.sample.repository.ICustomerRepository;
 import com.sample_spring.Customer;
 
 import java.util.List;
 
-public class CustomerServiceImpl implements ICustomerServiceImpl {
+public class CustomerService implements ICustomerServiceImpl {
 
     private ICustomerRepository
-            customerRepository = new HibernateCustomerRepositoryImpl();
+            customerRepository = new HibernateCustomerRepository();
 
     /*Business logic resides here*/
 
