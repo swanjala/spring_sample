@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HibernateCustomerRepositoryImpl implements ICustomerRepository{
+public class HibernateCustomerRepository implements ICustomerRepository{
 
     public List<Customer> findAll() {
 
