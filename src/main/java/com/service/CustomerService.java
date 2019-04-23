@@ -14,6 +14,13 @@ public class CustomerService implements ICustomerServiceImpl {
         this.customerRepository = customerRepository;
 
     }
+    public CustomerService(){
+
+    }
+    public CustomerService(ICustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
+
 
     @Override
     public List<Customer> findAll() {
