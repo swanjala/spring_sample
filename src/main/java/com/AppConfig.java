@@ -1,5 +1,6 @@
 package com;
 
+import com.sample.repository.HibernateCustomerRepository;
 import com.sample.repository.ICustomerRepository;
 import com.service.CustomerService;
 import com.service.ICustomerServiceImpl;
@@ -15,9 +16,19 @@ public class AppConfig {
      */
 
     @Bean(name="customerService")// bean naming convention, like a variable
+    /*this beans are a singleton and executes the first call and subsequently
+    * returns the cached instance */
     public ICustomerServiceImpl getCustomerService() {
         /* Implementing a concretion and returning the interface
         * */
-        return new CustomerService();
+//        return new CustomerService();
+        CustomerService customerService = new CustomerService();
+         customerService.setCustomerRepository(getCustomerRepository());
+         return customerService;
+    }
+
+    @Bean(name="customerRepository")
+    public ICustomerRepository getCustomerRepository() {
+        return new HibernateCustomerRepository();
     }
 }
