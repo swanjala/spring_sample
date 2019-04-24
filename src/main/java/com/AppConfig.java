@@ -20,10 +20,16 @@ public class AppConfig {
     * returns the cached instance */
     public ICustomerServiceImpl getCustomerService() {
         /* Implementing a concretion and returning the interface
-        * */
-//        return new CustomerService();
-        CustomerService customerService = new CustomerService();
-         customerService.setCustomerRepository(getCustomerRepository());
+        *
+           return new CustomerService();*/
+
+       /* CustomerService customerService = new CustomerService();*/
+
+        /*Convert reference into a Constructor injection*/
+        CustomerService customerService = new CustomerService(getCustomerRepository());
+
+
+         //customerService.setCustomerRepository(getCustomerRepository());
          return customerService;
     }
 

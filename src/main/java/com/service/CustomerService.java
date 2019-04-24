@@ -24,9 +24,10 @@ public class CustomerService implements ICustomerServiceImpl {
 //    }
 //
 //    @Autowired //Constructor injection
-//    public CustomerService(ICustomerRepository customerRepository) {
-//        this.customerRepository = customerRepository;
-//    }
+
+    public CustomerService(ICustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
 
     @Override
