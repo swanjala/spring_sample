@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd"
 
-   <bean name="customerRepository"
-         class="com.sample.repository.HibernateCustomerRepository"/>
+>
 
-    <bean name="customerService"
-          class="com.service.CustomerService">
-    <constructor-arg index="0" ref="customerRepository"/>
-    </bean>
+<!--   <bean name="customerRepository"-->
+<!--         class="com.sample.repository.HibernateCustomerRepository"/>-->
+
+<!--    <bean name="customerService"-->
+<!--          class="com.service.CustomerService">-->
+<!--    <constructor-arg index="0" ref="customerRepository"/>-->
+<!--    </bean>-->
 
 <!--    <bean name="customerService"-->
 <!--          class="com.service.CustomerService" autowire="constructor"/> -->
@@ -18,6 +24,18 @@
     <!--          class="com.service.CustomerService" autowire="byType"/> arguments in the setter-->
     <!--    <bean name="customerService"-->
     <!--          class="com.service.CustomerService" autowire="byName"/> arguments in the setter-->
+
+<!--    Add an annotation config and component scanner-->
+
+    <context:annotation-config/>
+   <context:component-scan base-package="com"/>
+
+<!--    Steriotype annotation, component service and repository-->
+<!--    Componenent : any pojo
+Service: where the business logic layer -->
+<!--    Repository: interraction with our database : whatever we use the
+layer is labled by the @repository -->
+
 
 
 </beans>
