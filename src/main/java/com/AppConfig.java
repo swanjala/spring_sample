@@ -5,9 +5,13 @@ import com.sample.repository.ICustomerRepository;
 import com.service.CustomerService;
 import com.service.ICustomerServiceImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration // class level annotation
+@ComponentScan({"com"})/*Implement a scan for autowiring _
+and inject them into the project */
+
 public class AppConfig {
 
     /* method level annotion, to show what this

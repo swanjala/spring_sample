@@ -10,21 +10,19 @@ import java.util.List;
 @Service("customerService")
 public class CustomerService implements ICustomerServiceImpl {
 
-   // @Autowired (member injection)
+   /* @Autowired (member injection)*/
     private ICustomerRepository
             customerRepository ;
 
-  //  @Autowired //setter injection
+  /* @Autowired //setter injection*/
     public void setCustomerRepository(ICustomerRepository customerRepository){
         this.customerRepository = customerRepository;
 
     }
-//    public CustomerService(){
-//
-//    }
-//
-//    @Autowired //Constructor injection
+/*    public CustomerService(){    }
 
+
+    @Autowired //Constructor injection */
     public CustomerService(ICustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
